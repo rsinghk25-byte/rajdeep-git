@@ -1,28 +1,51 @@
 //RA3Ex7 - Activitats ràpides DOM JS
 
 //1 - Selecció: Usa querySelector per canviar el color d'un <h1> quan la pàgina carregui.
+let titol = document.querySelector("#titol-principal");
+titol.style.color = "#835E54";
 
-let h = document.querySelector("#titol-principal");
-h.style.color = "blue";
-//2 - Contingut: Fes que un paràgraf <p> mostri "Hola Món" usant textContent.
-let p1 = document.querySelector("#paragraf-hola");
-p1.textContent = "Hola Món";
+
+
+
+//2 - Contingut: Fes que un paràusant textContent.graf <p> mostri "Hola Món" 
+const paragraf = document.querySelector("#paragraf-hola");
+paragraf.textContent = "Hola Món";
 
 
 //3 - Atributs: Canvia la 'src' d'una imatge <img> usant setAttribute.
-let imatge = document.querySelector("#Imatge de prova");
-imatge.setAttribute("src" ,"https://motollopis.es/wp-content/uploads/2021/10/carnet-conducir-moto.jpg");
+const imatge = document.querySelector("#imatge-canviant");
+imatge.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyOYB8E9Dji-JGOduWqrC-yaRLVgGSzHdltTWuLnVBe9ENwpy2gW943iGnnERpSdIpMMP1SuTO5_BfHP8YwEuueVnoGTNoL5dRUmBs6Q&s=10");
 
 //4 - Estils: Canvia el color de fons (backgroundColor) d'un element en fer-li clic.
-
+const caixaEstil = document.querySelector("#caixa-estil");
+caixaEstil.addEventListener("click", function () {
+    caixaEstil.style.backgroundColor = "#ffd700";
+});
 
 //5 - Classes: Crea un botó que afegeixi/tregui la classe 'actiu' amb classList.toggle.
+const botoToggle = document.querySelector("#boto-toggle");
+const textClasse = document.querySelector("#text-classe");
+botoToggle.addEventListener("click", function () {
+    textClasse.classList.toggle("actiu");
+});
 
-
-//6 - Esdeveniments: Afegeix un addEventListener a un botó perquè tregui una alerta (alert).
-
+//6 - Esdeveniments: Afegeix un addEventListener a un botó perquè tregui una alertal (alert).
+const botoAlerta = document.querySelector("#boto-alerta");
+botoAlerta.addEventListener("click", function () {
+    alert("Has clicat el botó!");
+});
 
 //7 - Estructura: Crea un nou <li> amb createElement i afegeix-lo a una <ul> amb appendChild.
-
+const botoAfegir = document.querySelector("#boto-afegir");
+const llista = document.querySelector("#llista-compra");
+botoAfegir.addEventListener("click", function () {
+    const nouItem = document.createElement("li");
+    nouItem.textContent = "Nou producte";
+    llista.appendChild(nouItem);
+});
 
 //8 - Eliminació: Fes que un element desaparegui en fer-li clic usant el mètode remove().
+const elementEliminar = document.querySelector("#element-eliminar");
+elementEliminar.addEventListener("click", function () {
+    elementEliminar.remove();
+});
